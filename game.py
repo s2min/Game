@@ -30,9 +30,7 @@ class Character:
 # 플레이어 캐릭터의 클래스
 class Player(Character):
     def __init__(self, name, hp, mp, power, mpower):
-        self.name = name
-        self.max_hp = hp
-        self.hp = hp
+        super().__init__(name, hp, power)
         self.max_mp = mp
         self.mp = mp
         self.power = power
@@ -63,10 +61,7 @@ class Player(Character):
 # 몬스터 캐릭터의 클래스
 class Monster(Character):
     def __init__(self, name, hp, power, critical_power):
-        self.name = name
-        self.max_hp = hp
-        self.hp = hp
-        self.power = power
+        super().__init__(name, hp, power)
         self.critical_power = critical_power
         self.turn_count = 0
 
